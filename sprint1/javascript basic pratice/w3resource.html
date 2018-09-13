@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>w3javascriptresource</title>
+</head>
+<body>
+
+    <script>
+   /*  1. Write a JavaScript program to display the current day and time in the following format.
+    Sample Output : Today is : Tuesday. */
+    let currenttime;
+    let today;
+    function getDay(){
+        let today = new Date();
+        currenttime = today.getDay();
+        return currenttime;
+    }
+
+     var days =['Sunday','Monday','Tuesday','Wenesday','Thursday','Friday','Saturday']
+    console.log('Today is ' + days[getDay()]);
+    
+    function getCurrentTime(){
+        let time = new Date();
+        let hour = time.getHours();
+        if(hour<12){
+            hour = hour +'AM';
+        }
+        else if(hour>12){
+            
+            hour = hour-12 +' PM';
+        }
+        let minute = time.getMinutes();
+        let second= time.getSeconds();
+        let nowTime = hour +':' + minute + ':' + second;
+        return nowTime;
+    }
+    console.log('Current Time is: ' + getCurrentTime()); 
+
+    /* .2 Write a JavaScript program to get the current date. 
+    Expected Output : 
+    mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy */
+
+    let date = new Date();
+    let month = date.getMonth();
+    let day = date.getDay();
+    let year = date.getFullYear();
+
+    console.log(month + '-' +day + '-' + year);
+    console.log(month + '/' +day + '/' + year);
+    console.log(day + '-' +month + '-' + year);
+    console.log(month + '/' +day + '/' + year);
+    
+   /*  4. Write a JavaScript program to find the area of a 
+    triangle where lengths of the three of its sides are 5, 6, 7.  */
+    
+   
+    function areaOfTriangle(side1,side2,side3){
+        var perimeter = (side1 + side2 + side3)/2;
+        var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+        return area;
+    }
+
+    console.log(areaOfTriangle(5,6,7));
+
+    /* 6. Write a JavaScript program to determine whether
+     a given year is a leap year in the Gregorian calendar */
+
+
+    /* var years =(prompt("Enter a year"));
+    if(years%4!==0){
+        console.log("not a leap year");
+        
+        
+    }
+    else if(years%100!==0){
+        
+        console.log("is a leap year");
+        
+    }
+
+    else if(years%400!==0){
+        console.log("not a leap year");
+    }
+    
+    else{
+        console.log("is a leap year");
+    } */
+
+
+/* 7. Write a JavaScript program to find 1st January is
+ being a Sunday between 2014 and 2050. */ 
+ for (var yeaar = 2014; yeaar <= 2050; yeaar++)
+    {
+    var d = new Date(yeaar, 0, 1);
+    if ( d.getDay() === 0 ){
+        console.log("1st January is being a Sunday  "+yeaar);
+    }
+        
+    }
+
+   /*  8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".  */ 
+    
+    /* function randomNumber(){
+        var number  = Math.floor(Math.random()*10)+1;
+        return number;
+    }
+    console.log(randomNumber());   
+    var userGuessNumber = Number(prompt("Enter a number"));
+    if(userGuessNumber == randomNumber()){
+        console.log("You score right");
+        
+    }
+    else{
+        console.log("please try agin");
+        
+    } */
+ 
+   /*  9. Write a JavaScript program to calculate days left until next Christmas. */
+    
+  
+   /*  var date = new Date;
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var today = date.getDay();
+        
+    var thisYear = year;
+    const christmasMonth = 12;
+    const christmasDay = 25; */
+
+    </script>
+    
+</body>
+</html>

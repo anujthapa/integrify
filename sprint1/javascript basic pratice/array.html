@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var cars = ['BMW','Toyota','VW','KIA'];
+
+
+        //length of array
+        console.log(cars.length);
+
+        //last element of array
+        console.log(cars[cars.length-1]);
+
+        //foreach loop on array
+        cars.forEach(function(index,item,cars){
+            console.log(index,item);    
+        });
+
+        //push on array
+        var newCars = cars.push('Renult');
+        console.log(cars);
+
+        //pop /delete last element of array
+        var popCars = cars.pop();
+        console.log(cars);
+        
+        //remove first element of array
+        var firstCars = cars.shift();
+        console.log(cars);
+
+        //add first element of array
+        var addFirstElement = cars.unshift('BMW');
+        console.log(cars);
+        
+        //find index of elemnt in array
+        var elementIndex = cars.indexOf('KIA');
+        console.log(elementIndex);
+        
+        //remove by index number
+        var removeIndex=cars.splice(2,4);
+        console.log(removeIndex);
+        console.log(cars);
+        
+
+        // every functionin js
+
+        var numbers = [1,2,3,4,5,6,7,8,9,10]
+        function underNumber(number){
+            return number<18;
+        }
+
+        // fill function in array
+        console.log(numbers.every(underNumber));
+        var newNumbers = numbers.fill(0,0,1);
+        console.log(numbers);
+        
+    
+        //filter methord in array
+        var numbers = [1,2,3,4,5,6,7,8,9,10]
+        var filterNumbers = numbers.filter(number=>number<9);
+        console.log(filterNumbers);
+
+        //find methord in array 
+
+        var numbers = [1,2,3,4,5,6,7,8,9,10]
+        var findNumber = numbers.find(number=>number > 5);
+        console.log(findNumber);
+
+        //foreach in array
+
+        numbers.forEach(function(num){
+            console.log(num);
+            
+        });
+        
+
+        //includes in array
+        var animals =['cat','camel','tiger','chamero','rat'];
+        console.log(animals.includes('tiger'));
+        
+
+        //index of in array
+        var animals =['cat','camel','tiger','chamero','rat','cat'];
+        console.log(animals.indexOf('cat',2));
+
+        //first non repeting number
+            var  number = [1,3,2,4,5,5,3,6,2,7,1,8,8,9];
+            function firstNonRepetingNumber(){
+                for(let i = 0; i<number.length; i++){
+                    var element = number[i]
+                    var firstIndex = number.indexOf(element);
+                    var lastIndex = number.lastIndexOf(element);
+                    if(lastIndex-firstIndex == 0 ){
+                        console.log(number[i]+ ' is the first non repeting number');
+                        break;
+                    }
+                      
+                 }
+            }
+
+        //map for array
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+
+
+        
+        
+        
+        
+
+    </script>
+</body>
+</html>
