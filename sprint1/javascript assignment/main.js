@@ -1,7 +1,7 @@
 console.log("exercise 1---------------------------");
 
 console.log("variables");
-console.log("                                   ");
+
 
 console.log("1.Declare variables to store your first name, last name, marital status, country and age in multiple lines");
 
@@ -46,9 +46,29 @@ console.log("c.Declare two variables myAge and yourAge and assign them initial v
  console.log( );
 console.log(company);
 
-console.log();
+
 console.log("Print the length of the string  on the browser console using console.log()");
 console.log(company.length);
+
+
+
+console.log("Change all the string to capital letters using toUpperCase() method");
+console.log(company.toUpperCase());
+
+
+console.log("Change all the string to small letters using toLowerCase() method");
+console.log(company.toLowerCase());
+
+console.log("Cut(slice) out the first word of the string using slice, substr() or substring() method");
+console.log("using slice : " + company.slice(0,9));
+
+
+
+
+
+
+
+
 
 
  
