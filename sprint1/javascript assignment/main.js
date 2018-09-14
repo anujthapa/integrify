@@ -127,10 +127,125 @@ console.log("Arithmetic Operator");
 let operandOne = 4;
 let operandTwo = 3;
 console.log("4 + 3 : " + operandOne + operandTwo);
-console.log("4 - 3: " + operandOne - operandTwo);
+console.log("4 - 3 : " + operandOne - operandTwo);
 console.log("4 * 3: " +operandOne * operandTwo);
 console.log("4 / 3: " +operandOne / operandTwo);
 console.log("4 % 3: " +operandOne % operandTwo);
+
+console.log("Comparison Operators");
+
+console.log(operandOne>operandTwo);
+console.log(operandOne>=operandTwo);
+console.log(operandOne<operandTwo);
+console.log(operandOne<=operandTwo);
+console.log(operandOne==operandOne);
+console.log(operandOne===operandOne);
+console.log(operandOne!=operandOne);
+console.log(operandOne!==operandOne);
+console.log(operandOne!='operandOne');
+console.log(operandOne=='operandOne');
+console.log(operandOne==='operandOne');
+
+console.log("Logical operators");
+console.log(4 > 3 && 10 < 12);
+console.log(4 > 3 && 10 > 12);
+console.log(4 > 3 || 10 < 12);
+console.log(4 > 3 || 10 > 12);
+console.log(!(4 > 3));
+console.log(!(4 < 3));
+console.log(!(false));
+console.log(!(4 > 3 && 10 < 12));
+console.log(!(4 > 3 && 10 > 12));
+console.log(!(4 === '4'));
+
+
+console.log("Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:You are old enough to drive but if not 18 give feedback to wait for the years he supposed to wait for.");
+/* let userAge = prompt("enter your age"); 
+let canDriveAge = 18;
+if(userAge>=canDriveAge){
+    console.log("You can drive a car"); 
+}
+else{
+    console.log(`You can drive car after ${canDriveAge-userAge} year old`); 
+} */
+
+console.log(" Compare the values of myAge and yourAge using if … else. Based on the comparison log   to console who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.");
+
+function ageDiffrence(){
+    let mAge = prompt("Enter your age");
+    let yAge = prompt("Enter your friend age");
+    let ageDIff = mAge-yAge;
+    return ageDIff;
+}
+
+
+console.log("If a is greater than b return a is greater than b else a is less than b.");
+let a = 4;
+let b = 3;
+if(a>b){
+    console.log(`a is greater than b by ${a-b}` );
+    
+}
+else if(a<b){
+    console.log(`b is greater than a by ${b-a}` );
+}
+else{
+    console.log("a and b are same number");
+    
+}
+
+
+console.log("Array ");
+console.log("Declare an array  variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.");
+let companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle' ,'Amazon']
+
+console.log("Print the array using console.log()");
+console.log(companies);
+
+console.log(" Print the number of companies in the array");
+console.log(`The length of companies array is ${companies.length}`);
+
+console.log("Print out each company");
+ companies.forEach((element)=>{
+     console.log(element);
+     })
+
+console.log("Capitalize each company and print them out");
+
+companies.map((member)=>{
+    console.log(member.toUpperCase());
+    
+})
+
+console.log("Print the array like this: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.");
+
+let firstPartArray= companies.slice(0,companies.length-1);
+let lastPartArray = companies.slice(companies.length-1,companies.length);
+console.log(`${firstPartArray} and ${lastPartArray} are big IT companies`);
+
+console.log("Sort the array using sort() method");
+function sortArray(company){
+    return company.sort();
+}
+console.log(sortArray(companies));
+
+console.log("Reverse the array using reverse() method");
+function reverseArray(company){
+    return company.reverse();
+}
+console.log(reverseArray(companies));
+
+
+console.log("Loop");
+console.log("Iterate 0 to 10 using for loop, do the same using while and do while loop.");
+
+
+
+
+
+
+
+
 
 
 
