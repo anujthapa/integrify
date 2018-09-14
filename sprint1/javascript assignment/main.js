@@ -239,6 +239,200 @@ console.log(reverseArray(companies));
 console.log("Loop");
 console.log("Iterate 0 to 10 using for loop, do the same using while and do while loop.");
 
+console.log("using for loop");
+for(let i = 0; i<11; i++){
+    console.log(i);    
+}
+
+console.log("using While");
+let i = 0;
+while(i<11){
+    console.log(i); 
+    i++;
+}
+
+console.log("using do while loop");
+let j = 0;
+do{
+    console.log(j);
+    j++;   
+}
+while(j<11)
+
+console.log(" Iterate 10 to 0 using for loop, do the same using while and do while loop.");
+console.log("Printing 10 to 0 using for loop");
+for(let i=10; i>=0; i--){
+    console.log(i);
+    
+}
+
+console.log("Printing 10 to 0 using while loop");
+let k=10;
+while(k>=0){
+    console.log(k);
+    k--;
+}
+
+console.log("Printing 10 to 0 using do while loop");
+let l = 10;
+do{
+    console.log(l);
+    l--;
+}
+while(l>=0);
+
+
+console.log("Function  ");
+
+console.log("Declare a function fullName and it print out your full name.");
+console.log("Declare a function fullName and now it takes firstName, lastName as a parameter and it returns your full name.");
+function fullName(fname,lname){
+    let fullName = fname.concat( lname);
+    return fullName;
+}
+console.log(fullName('anuj','thapa'));
+
+console.log("Declare a function addNumbers and it takes two two parameters and it returns sum.");
+let sumNumbers = ((num1,num2)=>{return num1+ num2});
+console.log(sumNumbers(5,7));
+
+console.log(" Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.");
+ let printArrays = ((array)=>{
+     return array.map((element)=>element)
+    });
+ console.log(printArrays(companies));
+
+ console.log("Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array(dont’ use method).");
+ 
+ let reverseArraya = ((array)=>{
+    let newCompanyList =[];
+    for(let i= array.length-1;i>=0; i--){
+        newCompanyList.push(array[i]);
+    }
+    return newCompanyList;
+ });
+ console.log(reverseArraya(companies));
+ 
+ console.log("Declare a function name capitalizeArray. It takes array as a parameter and it returns  the capitalized array. ");
+ let capitalizeArray = ((array)=>{
+   return array.map(element=>element.toUpperCase())
+ })
+ console.log(capitalizeArray(companies));
+
+ console.log("Declare a function name removeItem. It returns array after removing an item ");
+ let removeItem =((array)=>{
+    array.pop();
+    return array;
+ });
+ console.log(removeItem(companies));
+ 
+ console.log("Declare a function name addItem. It returns array after adding an item");
+ let addItem = ((array)=>{
+     let item = prompt("Enter the company you want to add")
+     array.push(item);
+     return array;
+ })
+ /* console.log(addItem(companies)); */
+ 
+ console.log("Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range. ");
+let sumOfNumbers = (()=>{
+    let rangeNumber = prompt("Enter the range of number you want to add")
+    let sum = 0;
+    for(let i = 0; i<=rangeNumber; i++){ 
+        sum = sum + i;
+      
+    }
+    return sum;
+})
+/* console.log(sumOfNumbers()); */
+
+console.log("Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that range.");
+let sumOfOdds = (()=>{
+    let rangeNumber = prompt("Enter the range of number you want to add")
+    let sum = 0;
+    for(let i = 0; i<=rangeNumber;i++){
+        if(i%2!=0){
+            sum = sum +i;
+        }
+    }
+    return sum;
+});
+/* console.log(sumOfOdds());  */
+
+console.log("Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that range.");
+let sumOfEvens = (()=>{
+    let rangeNumber = prompt("Enter the range of number you want to add")
+    let sum = 0;
+    for(let i = 0; i<=rangeNumber;i++){
+        if(i%2==0){
+            sum = sum +i;
+        }
+    }
+    return sum;
+});
+/* console.log(sumOfEvens()); */
+
+console.log("Declare a function name evensAndOdds. It takes a number parameter and it counts number of evens and odds in the number.");
+let evensAndOdds =(()=>{
+    let rangeNumber = prompt("enter the range of number you wnat to know");
+    let evenCount= 0;
+    let oddCount= 0;
+    for(let i = 0; i<=rangeNumber; i++){
+        if(i%2==0){
+            evenCount++;
+        }
+        else if(i%2!==0){
+            oddCount++;
+        }
+        console.log(`Even in the range is ${evenCount}`);
+        console.log(`Odd Numbers in the range is ${oddCount}`);
+        
+    }
+    
+})
+/* evensAndOdds(); */
+
+console.log("Declare a function name randomHexaNumberGenerator. When this function is called it generates  a random hexadecimal  number. The function return the hexadecimal number.");
+
+let randomHexaNumberGenerator = (()=>{return number = "#"+Math.random().toString(16).slice(2,8).toUpperCase();});
+console.log(randomHexaNumberGenerator());
+
+console.log("Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.");
+let userIdGenerator = (()=>{
+    return userId = Math.random().toString(36).slice(2,9).toUpperCase();
+})
+console.log(userIdGenerator());
+
+console.log("Modify question number n . Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated. ");
+let userIdGeneratedByUserSevenTimes = (()=>{
+    let userChoice = prompt("How many user name do you want!")
+    let userIDCount =0 ;
+    let userID='';
+    do{
+        userID=userIdGenerator();
+        console.log(userID);
+        userIDCount++;
+    }
+    while(userIDCount<userChoice)
+})
+
+/* userIdGeneratedByUserSevenTimes(); */
+
+console.log("Write a function name rgbColorGenerator and it generates rgb colors.");
+let rgbColorGenerator = (()=>{
+    let numberGenerator = (()=>{return Math.ceil(Math.random()*225).toString().split('.');});
+    let rgb = `rgb(${numberGenerator()},${numberGenerator()},${numberGenerator()})`;
+    return rgb;
+});
+console.log(rgbColorGenerator());
+
+
+
+
+
+
+
+
 
 
 
