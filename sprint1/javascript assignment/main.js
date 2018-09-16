@@ -428,6 +428,115 @@ console.log(rgbColorGenerator());
 
 
 
+console.log("Object");
+
+console.log("Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncomes, totalExpenses, acountInfo,addIncome, addExpence and accountBalance methods. Incomes is a set of incomes and its description and the same for expenses. ");
+let personAccount={
+    firstName : 'Anuj',
+    lastName : 'Thapa',
+   
+    incomes :  [{discription : 'salary',Amount: 1500},
+                {discription : 'bonus',Amount: 150},
+                {discription : 'lottery',Amount: 500}
+            ],
+    expenses : [{discription : 'roomrent',Amount: 500},
+                {discription : 'food',Amount: 100},
+                {discription : 'beer',Amount: 500}],
+    
+    totalIncome : function(){
+        const total = this.incomes.reduce(
+            (acc,curr)=> (acc+ curr.Amount));
+                return total;
+    },
+    /* totalIncome() {
+        const totalInc = this.incomes.reduce(
+          (acc, curr) => (acc += curr.income)
+          , 0
+        );
+        return totalInc;
+      }, */
+
+   
+    addIncome : function(dis,amt){
+         dis = prompt("Enter the heading of income");
+        amt= Number(prompt("Enter the Amount earned"));
+        this.incomes.push({discription:dis,amount:amt})
+    },
+    addExpenses : function(dis, amt){
+        dis = prompt("Enter the heading of income");
+        amt= Number(prompt("Enter the Amount earned"));
+        this.expenses.push({discription:dis,Amount:amt})
+    },
+    
+};
+
+console.log("Write a function name displayDateTime  and it display in this format: 28/08/2018 04:08 Use the new Date() object to get month, date, year, hour and minute.");
+
+let DisplayDateTime = function(){
+    let date = new Date();
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    console.log(`${day}/${month}/${year} ${hour}:${minute}`);
+    
+};
+DisplayDateTime();
+
+
+console.log("Regular Expression");
+console.log("Calculate the total annual income of the person from the following text. ‘He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.’");
+
+console.log("Functional Programming");
+console.log("Declare a function called getStringLists which take array as a parameter  and it returns array only with string items.");
+
+const randomArr =["hello","1","world",1,2];
+function getStringLists(arr){
+let arrayOnlySTring = arr.filter(str=>{
+    if(typeof(str) === 'string'){
+        return str;
+    }
+});
+return arrayOnlySTring;
+};
+console.log(getStringLists(randomArr));
+
+
+const countries= ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
+	,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","British Virgin Islands"
+	,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
+	,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
+	,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
+	,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
+	,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
+	,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
+	,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
+	,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
+	,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre and Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
+	,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts and Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
+	,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad and Tobago","Tunisia"
+	,"Turkey","Turkmenistan","Turks and Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay"
+    ,"Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+  
+    console.log("Declare a function called categorizeCountries which returns array of countries have some common pattern(you find the countries array from slack).");
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
