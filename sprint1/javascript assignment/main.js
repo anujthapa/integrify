@@ -76,8 +76,10 @@ let splitCompany = company.split(' ');
 console.log(splitCompany);
 
 console.log("“Facebook, Google, Microsoft, Apple, IBM,Oracle, Amazon” split at the string at the comma  and change it to an array.");
-let companyName =' Facebook, Google, Microsoft, Apple, IBM,Oracle, Amazon '
-let splitUsingComma = companyName.split(',');
+let companyName ='Facebook, Google, Microsoft, Apple, IBM,Oracle, Amazon ';
+let splitUsingComma = (companyName.split(","));
+console.log(splitUsingComma);
+
 console.log(" splitUsingComma : " + splitUsingComma);
 
 console.log("Change Integrify Academy  to Microsoft Academy using replace() method.");
@@ -520,8 +522,27 @@ const countries= ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla
     ,"Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
   
     console.log("Declare a function called categorizeCountries which returns array of countries have some common pattern(you find the countries array from slack).");
-    
 
+
+console.log("Declare a getFirstTenCountries function and return an array of ten countries");
+let firstTenCountries = [];
+function getFirstTenCountries(arr){
+    for(let i= 0;i<10;i++){
+        firstTenCountries.push(arr[i]);
+    }
+    return firstTenCountries;
+}
+console.log(getFirstTenCountries(countries));
+
+console.log("Declare a getLastTenCountries function and return an array of ten countries");
+let lastTenCountries = [];
+function getLastTenCountries(arr){
+    for(let i = arr.length; i>=arr.length-10;i-- ){
+        lastTenCountries.push(arr[i]);
+    }
+    return lastTenCountries;
+}
+console.log(getLastTenCountries(countries));
 
 
 
