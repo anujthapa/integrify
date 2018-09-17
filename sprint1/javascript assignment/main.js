@@ -544,6 +544,23 @@ function getLastTenCountries(arr){
 }
 console.log(getLastTenCountries(countries));
 
+console.log("Find out with which letter are there many countries");
+const letterWithManyCountries =function(arr){
+    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    let countryObj = [];
+
+    for(letter of letters) {
+        let times = arr.filter(country => letter === country[0]);
+        countryObj.push({letter,times:times.length})   
+    }
+    countryObj.sort(function(a,b){
+        return b.times - a.times;
+    });
+    return countryObj[0];
+
+};
+
+/* console.log(letterWithManyCountries(countries)) */
 
 
 
