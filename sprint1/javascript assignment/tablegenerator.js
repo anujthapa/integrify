@@ -2,6 +2,9 @@ let wrapper = document.querySelector('.wrapper')
 let heading =  document.createElement('div');
 let headText = document.createElement('div');
 
+
+
+
 //header div
 heading.style.backgroundColor= 'green';
 heading.style.width = '100vw';
@@ -29,11 +32,10 @@ heading.appendChild(rowAndCoulmn);
 // div for row
 let rows= document.createElement('div');
 rows.textContent = 'Enter the number of row'
-
 rowAndCoulmn.appendChild(rows);
 
 // text area for row
-let textForRows = document.createElement('INPUT');
+let textForRows = document.createElement('input');
 textForRows.setAttribute("type","text")
 textForRows.className = 'rowsValue'
 rows.appendChild(textForRows);
@@ -75,6 +77,7 @@ perAndPix.appendChild(pix);
 // text area for pixel
 let textForPix = document.createElement('INPUT');
 textForPix.setAttribute("type","text");
+textForPix.className= 'borderValue';
 pix.appendChild(textForPix);
 
 //div for table backgrounds color---------------------------------------------------------
@@ -92,6 +95,7 @@ bgColor.appendChild(tblBgColor);
 // text area for Percentage fo width
 let inputFortblBgColor = document.createElement('INPUT');
 inputFortblBgColor.setAttribute("type","color");
+inputFortblBgColor.className='tblBgValue';
 tblBgColor.appendChild(inputFortblBgColor);
 
 //div for heading background color
@@ -102,6 +106,7 @@ bgColor.appendChild(hdBgColor);
 // text area for pixel
 let inputForHdBgColor = document.createElement('INPUT');
 inputForHdBgColor.setAttribute("type","color")
+inputForHdBgColor.className='tblHeadBgValue';
 hdBgColor.appendChild(inputForHdBgColor);
 
 //div for heading background color
@@ -112,6 +117,7 @@ bgColor.appendChild(bdBgColor);
 // text area for pixel
 let inputForBdBgColor = document.createElement('INPUT');
 inputForBdBgColor.setAttribute("type","color")
+inputForBdBgColor.className = 'tblBdBgValue';
 bdBgColor.appendChild(inputForBdBgColor);
 
 //div for border and text color---------------------------------------------------------
@@ -123,12 +129,13 @@ heading.appendChild(bgForBorderAndFontColor);
 
 // div for border Color
 let borderColor= document.createElement('div');
-borderColor.textContent = 'Border Color'
+borderColor.textContent = 'Border Color';
 bgForBorderAndFontColor.appendChild(borderColor);
 
 // text area for Percentage fo width
 let inputForBorderColor = document.createElement('INPUT');
 inputForBorderColor.setAttribute("type","color");
+inputForBorderColor.className='borderColorValue';
 bgForBorderAndFontColor.appendChild(inputForBorderColor);
 
 // div for Font color
@@ -139,17 +146,62 @@ bgForBorderAndFontColor.appendChild(fontColor);
 // color input for text color
 let inputForFontColor = document.createElement('INPUT');
 inputForFontColor.setAttribute("type","color");
+inputForFontColor.className='fontColorValue';
 bgForBorderAndFontColor.appendChild(inputForFontColor);
 
 
 //Div for generate btn
 let generateBtn = document.createElement('button');
-generateBtn.addEventListener;
 generateBtn.textContent ='Generate table';
 generateBtn.style.marginLeft = '50vw'
 heading.appendChild(generateBtn);
-
-
 wrapper.appendChild(heading);
+
+//gettign the value from user input from form.
+function getvalues(){
+tblRow = document.querySelector('.rowsValue').value;
+tblcolumn = document.querySelector('.colunmValue').value;
+let tblwidthPer=document.querySelector('.widthValue').value;
+let bodrWidth=document.querySelector('.borderValue').value;
+//let tblBgColor=document.querySelector('.tblBgValue').value;
+let tblHdBgColor=document.querySelector('.tblHeadBgValue').value;
+let tblBdBgColor=document.querySelector('.tblBdBgValue').value;
+let tblBodrColor=document.querySelector('.borderColorValue').value;
+let tblFontColor=document.querySelector('.fontColorValue').value;
+
+var tableDiv= document.createElement('div');
+wrapper.appendChild(tableDiv);
+var table = document.createElement('table');
+table.style.backgroundColor= 'blue';
+table.style.width='100vw';
+for(let i = 1; i<=tblRow; i++){
+    var tableHeading = document.createElement('th');
+    tableHeading.textContent=`Head ${i}`;
+    table.appendChild(tableHeading);
+}
+ for(let i=1;i<=tblcolumn;i++){
+        var tr = document.createElement('tr');
+        for(let i = 1; i<=tblRow; i++){
+            var td= document.createElement('td');
+            td.textContent='value';
+            tr.appendChild(td);
+            table.appendChild(tr);     
+    }
+}
+tableDiv.appendChild(table);
+
+}
+
+
+
+
+ generateBtn.addEventListener("click",getvalues);
+    
+
+
+
+
+
+
 
 
