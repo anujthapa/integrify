@@ -560,9 +560,7 @@ const letterWithManyCountries =function(arr){
 
 };
 
-/* console.log(letterWithManyCountries(countries)) */
-
-
+letterWithManyCountries(countries);
 
 
 
