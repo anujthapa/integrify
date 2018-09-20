@@ -5,6 +5,7 @@ let headText = document.createElement('div');
 
 
 
+
 //header div
 heading.style.backgroundColor= 'green';
 heading.style.width = '100vw';
@@ -149,6 +150,58 @@ inputForFontColor.setAttribute("type","color");
 inputForFontColor.className='fontColorValue';
 bgForBorderAndFontColor.appendChild(inputForFontColor);
 
+//div for fonts 
+let fontDiv = document.createElement('div');
+fontDiv.style.display='flex';
+fontDiv.style.width='100vw';
+fontDiv.style.justifyContent='center';
+heading.appendChild(fontDiv); 
+
+//list of fonts
+const Fonts = ["aerial","kantipur"];
+let fontListDiv = document.createElement('div');
+let fontList = document.createElement('select');
+fontList.className = 'fontlist';
+fontListDiv.appendChild(fontList);
+fontDiv.appendChild(fontListDiv);
+
+for(let i = 0;  i < Fonts.length; i++){
+    let option = document.createElement('option');
+    option.value= Fonts[i];
+    option.text = Fonts[i];
+    fontList.appendChild(option)
+}
+ 
+// font size
+let fontSizeDiv = document.createElement('div');
+let fontSize = document.createElement('select');
+fontSize.className='FontSize';
+fontSizeDiv.appendChild(fontSize);
+fontDiv.appendChild(fontSizeDiv)
+
+for(let i = 1; i<=1000; i++){
+    let option = document.createElement('option');
+    option.style.color = 'black';
+    option.value= i;
+    option.text= i;
+    fontSize.appendChild(option);
+}
+
+//div for text align
+const textAligns = ["left","right","center"];
+let textAlignDiv = document.createElement('div');
+let textAlign = document.createElement('select');
+textAlignDiv.appendChild(textAlign);
+fontDiv.appendChild(textAlignDiv);
+
+for(let i = 0; i<textAligns.length;i++){
+    let option = document.createElement('option');
+    option.value = textAligns[i];
+    option.text = textAligns[i];
+    textAlign.appendChild(option);
+}
+
+
 
 //Div for generate btn
 let generateBtn = document.createElement('button');
@@ -163,7 +216,7 @@ tblRow = document.querySelector('.rowsValue').value;
 tblcolumn = document.querySelector('.colunmValue').value;
 let tblwidthPer=document.querySelector('.widthValue').value;
 let bodrWidth=document.querySelector('.borderValue').value;
-//let tblBgColor=document.querySelector('.tblBgValue').value;
+let tblBgColor=document.querySelector('.tblBgValue').value;
 let tblHdBgColor=document.querySelector('.tblHeadBgValue').value;
 let tblBdBgColor=document.querySelector('.tblBdBgValue').value;
 let tblBodrColor=document.querySelector('.borderColorValue').value;
@@ -172,11 +225,17 @@ let tblFontColor=document.querySelector('.fontColorValue').value;
 var tableDiv= document.createElement('div');
 wrapper.appendChild(tableDiv);
 var table = document.createElement('table');
-table.style.backgroundColor= 'blue';
+table.style.width = tblwidthPer + "%";
+table.style.backgroundColor= tblBdBgColor;
+table.style.borderWidth =bodrWidth;
+table.style.borderColor = tblBodrColor;
+table.style.color = tblFontColor;
+ 
 table.style.width='100vw';
 for(let i = 1; i<=tblRow; i++){
     var tableHeading = document.createElement('th');
     tableHeading.textContent=`Head ${i}`;
+    tableHeading.style.backgroundColor=tblHdBgColor;
     table.appendChild(tableHeading);
 }
  for(let i=1;i<=tblcolumn;i++){
