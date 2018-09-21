@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Anuj Thapa",
+        "email": "anujthapa@outlook.com",
+        "Phone Number": "045210210"
+    },
+    {
+        "id":2,
+        "name":" Anita Thapa",
+        "email": "anitathapa@outlook.com",
+        "Phone Number": "045210210"
+    },
+    {
+        "id":3,
+        "name":"indira Thapa",
+        "email": "indirathapa@outlook.com",
+        "Phone Number": "045210210"
+    },
+    {
+        "id":4,
+        "name":"chandani Thapa Magar",
+        "email": "chandanithapa@outlook.com",
+        "Phone Number": "045210210"
+    },
+    {
+        "id":5,
+        "name":"Kushal Atreya",
+        "email": "kushal@outlook.com",
+        "Phone Number": "045210210"
+    }
+]

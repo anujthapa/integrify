@@ -2,21 +2,19 @@ let wrapper = document.querySelector('.wrapper')
 let heading =  document.createElement('div');
 let headText = document.createElement('div');
 
-
-
-
-
 //header div
 heading.style.backgroundColor= 'green';
 heading.style.width = '100vw';
-heading.style.height = '20vh';
+heading.style.height = 'auto';
+heading.style.padding = '20px',
 heading.style.display = 'flex';
 heading.style.flexWrap='wrap';
 
 //headtext 
 
-headText.textContent='HTML Table Generator';
-headText.style.fontSize = '3vh'
+headText.textContent='HTML TABLE GENERATOR';
+headText.style.fontSize = '4vh'
+headText.style.fontWeight = 'Bolder'
 headText.style.textAlign = 'center';
 headText.style.color = 'white';
 headText.style.width = '100vw'
@@ -31,8 +29,8 @@ rowAndCoulmn.style.justifyContent='center';
 heading.appendChild(rowAndCoulmn);
 
 // div for row
-let rows= document.createElement('div');
-rows.textContent = 'Enter the number of row'
+let rows= document.createElement('div'); 
+rows.textContent = 'Enter the number of row : '
 rowAndCoulmn.appendChild(rows);
 
 // text area for row
@@ -43,7 +41,7 @@ rows.appendChild(textForRows);
 
 //div for column
 let column = document.createElement('div');
-column.textContent=' Enter the number of Column'
+column.textContent=' Enter the number of Column : '
 rowAndCoulmn.appendChild(column);
 
 // text area for column
@@ -61,7 +59,7 @@ heading.appendChild(perAndPix);
 
 // div for per
 let per= document.createElement('div');
-per.textContent = 'Table width in percentage'
+per.textContent = 'Table width in percentage : '
 perAndPix.appendChild(per);
 
 // text area for Percentage fo width
@@ -72,7 +70,7 @@ per.appendChild(textForPer);
 
 //div for pixel
 let pix = document.createElement('div');
-pix.textContent='Border width in pixel'
+pix.textContent='Border width in pixel : '
 perAndPix.appendChild(pix);
 
 // text area for pixel
@@ -90,7 +88,7 @@ heading.appendChild(bgColor);
 
 // div for table background cotblBgColor
 let tblBgColor= document.createElement('div');
-tblBgColor.textContent = 'Table background color'
+tblBgColor.textContent = 'Table background color : '
 bgColor.appendChild(tblBgColor);
 
 // text area for Percentage fo width
@@ -101,7 +99,7 @@ tblBgColor.appendChild(inputFortblBgColor);
 
 //div for heading background color
 let hdBgColor = document.createElement('div');
-hdBgColor.textContent='Head background color';
+hdBgColor.textContent='Head background color : ';
 bgColor.appendChild(hdBgColor);
 
 // text area for pixel
@@ -112,7 +110,7 @@ hdBgColor.appendChild(inputForHdBgColor);
 
 //div for heading background color
 let bdBgColor = document.createElement('div');
-bdBgColor.textContent='Body background color';
+bdBgColor.textContent='Body background color : ';
 bgColor.appendChild(bdBgColor);
 
 // text area for pixel
@@ -130,7 +128,7 @@ heading.appendChild(bgForBorderAndFontColor);
 
 // div for border Color
 let borderColor= document.createElement('div');
-borderColor.textContent = 'Border Color';
+borderColor.textContent = 'Border Color : ';
 bgForBorderAndFontColor.appendChild(borderColor);
 
 // text area for Percentage fo width
@@ -141,7 +139,7 @@ bgForBorderAndFontColor.appendChild(inputForBorderColor);
 
 // div for Font color
 let fontColor= document.createElement('div');
-fontColor.textContent = 'font Color'
+fontColor.textContent = 'font Color : '
 bgForBorderAndFontColor.appendChild(fontColor);
 
 // color input for text color
@@ -160,8 +158,9 @@ heading.appendChild(fontDiv);
 //list of fonts
 const Fonts = ["aerial","kantipur"];
 let fontListDiv = document.createElement('div');
+fontListDiv.textContent = 'Select the font you want : '
 let fontList = document.createElement('select');
-fontList.className = 'fontlist';
+fontList.className = 'fontList';
 fontListDiv.appendChild(fontList);
 fontDiv.appendChild(fontListDiv);
 
@@ -174,7 +173,9 @@ for(let i = 0;  i < Fonts.length; i++){
  
 // font size
 let fontSizeDiv = document.createElement('div');
+fontSizeDiv.textContent = 'Select the font Size you want : '
 let fontSize = document.createElement('select');
+
 fontSize.className='FontSize';
 fontSizeDiv.appendChild(fontSize);
 fontDiv.appendChild(fontSizeDiv)
@@ -190,7 +191,9 @@ for(let i = 1; i<=1000; i++){
 //div for text align
 const textAligns = ["left","right","center"];
 let textAlignDiv = document.createElement('div');
+textAlignDiv.textContent ='Select the text align : ';
 let textAlign = document.createElement('select');
+textAlign.className = 'textAlign'
 textAlignDiv.appendChild(textAlign);
 fontDiv.appendChild(textAlignDiv);
 
@@ -209,9 +212,16 @@ generateBtn.textContent ='Generate table';
 generateBtn.style.marginLeft = '50vw'
 heading.appendChild(generateBtn);
 wrapper.appendChild(heading);
-
+//CRETE A DIV FOR TABLE
+table = document.createElement('table');
 //gettign the value from user input from form.
+
+//creting a div for table to be displayed
+var tableDiv= document.createElement('div');
+wrapper.appendChild(tableDiv);
+
 function getvalues(){
+table.innerHTML = "";
 tblRow = document.querySelector('.rowsValue').value;
 tblcolumn = document.querySelector('.colunmValue').value;
 let tblwidthPer=document.querySelector('.widthValue').value;
@@ -221,40 +231,44 @@ let tblHdBgColor=document.querySelector('.tblHeadBgValue').value;
 let tblBdBgColor=document.querySelector('.tblBdBgValue').value;
 let tblBodrColor=document.querySelector('.borderColorValue').value;
 let tblFontColor=document.querySelector('.fontColorValue').value;
+let tblFontSize =document.querySelector('.FontSize').value;
+let tblFontStyle=document.querySelector('.fontList').value;
+let tblFontAlign=document.querySelector('.textAlign').value;
 
-var tableDiv= document.createElement('div');
-wrapper.appendChild(tableDiv);
-var table = document.createElement('table');
+
 table.style.width = tblwidthPer + "%";
 table.style.backgroundColor= tblBdBgColor;
 table.style.borderWidth =bodrWidth;
 table.style.borderColor = tblBodrColor;
 table.style.color = tblFontColor;
- 
-table.style.width='100vw';
-for(let i = 1; i<=tblRow; i++){
+table.style.textAlign = tblFontAlign;
+table.style.fontWeight = tblFontSize + "px";
+table.style.fontFamily = tblFontStyle;
+
+for(let i = 1; i<=tblcolumn; i++){
     var tableHeading = document.createElement('th');
     tableHeading.textContent=`Head ${i}`;
     tableHeading.style.backgroundColor=tblHdBgColor;
     table.appendChild(tableHeading);
 }
- for(let i=1;i<=tblcolumn;i++){
+ for(let i=1;i<=tblRow;i++){
         var tr = document.createElement('tr');
-        for(let i = 1; i<=tblRow; i++){
+        tr.style.borderWidth =bodrWidth;
+        tr.style.backgroundColor = tblBgColor;
+    for(let i = 1; i<=tblcolumn; i++){
             var td= document.createElement('td');
             td.textContent='value';
-            tr.appendChild(td);
-            table.appendChild(tr);     
+            td.style.borderWidth =bodrWidth;
+            tr.appendChild(td);          
     }
+    table.appendChild(tr);  
 }
 tableDiv.appendChild(table);
-
 }
-
-
-
-
- generateBtn.addEventListener("click",getvalues);
+ generateBtn.addEventListener("click",() => {
+    getvalues()
+     
+ });
     
 
 
