@@ -1,8 +1,12 @@
 let mainContent = document.querySelector(".mainContent");
-let sortCountries = document.querySelector(".sortCountries");
-let sortCapital = document.querySelector(".sortCapital");
-let sortContinent = document.querySelector(".SortContinent");
-let sortPopulation = document.querySelector(".sortPopulation");
+let sortCountriesDecending = document.querySelector("#sortDownCountries");
+let  sortCountriesAccending= document.querySelector("#sortUpCountries");
+let sortCapital = document.querySelector("#sortDownCapital");
+let sortCapitalAccending = document.querySelector("#sortUpCapital")
+let sortContinent = document.querySelector("#sortDownContinent");
+let sortContinentAccending = document.querySelector("#sortUpContinent");
+let sortPopulation = document.querySelector("#sortDownPopulation");
+let sortPopulationAccending = document.querySelector("#sortUpPopulation");
 let inputValue = document.querySelector(".inputValue");
 
 
@@ -16,6 +20,8 @@ function fetchApi(){
         return res.json();  
     })
     .then(data => {
+        console.log(data);
+        
         sendCountries(data);
         displayData(data);
     });
@@ -23,7 +29,7 @@ function fetchApi(){
 //run the fetch data function
 fetchApi()  
 
- //display data
+ //display data in web page
  function displayData(data){
     data.forEach(element => {
         let countryDiv = document.createElement("div")
@@ -39,7 +45,7 @@ fetchApi()
             mainContent.appendChild(countryDiv);
     });
  }
-
+//-------------------------------------------------
 //function sendCountries bring data from fetch data
 function sendCountries(data){
 
@@ -57,14 +63,37 @@ function sortByCountrie(){
         }
     });
         displayData(data) ;
-        console.log(data.reverse());     
+        
     };
 //event listener to sort button of country
-sortCountries.addEventListener('click',()=>{
+sortCountriesDecending.addEventListener('click',()=>{
     mainContent.innerHTML= "";
     sortByCountrie();
 });
 
+//function to sort country accending
+function sortCountriesByAccending(){
+    data.sort((a,b)=>{
+        if(a.name <b.name){
+            return -1;
+        }
+        else if(a.name > b.name){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    });
+        displayData(data) ;
+        
+    };
+
+//event for country sort by accending 
+sortCountriesAccending.addEventListener('click',()=>{
+    mainContent.innerHTML= "";
+    sortCountriesByAccending();
+})
+//--------------------------------------------------------
 //sort the list by capital name
 function sortByCapital(){
     data.sort((a,b)=>{
@@ -86,14 +115,35 @@ sortCapital.addEventListener('click',()=>{
     sortByCapital();
 });
 
+//function to sort capital in accending order
+function sortCapitalByAccending(){
+    data.sort((a,b)=>{
+        if(a.capital < b.capital){
+            return -1;
+        }
+        else if(a.capital > b.capital){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    });
+    displayData(data);
+};
+
+//event listner to sort button by accending
+sortCapitalAccending.addEventListener('click',()=>{
+    mainContent.innerHTML= "";
+    sortCapitalByAccending();
+})
 //sort by continent Name
 
 function sortByContinent(){
     data.sort((a,b)=>{
-        if(a.region > b.region){
+        if(a.region < b.region){
             return -1;
         }
-        else if(a.region < b.region){
+        else if(a.region > b.region){
             return 1;
         }
         else{
@@ -108,6 +158,29 @@ sortContinent.addEventListener('click',()=>{
     sortByContinent();
 });
 
+//sort by continent Name
+
+function sortContinentByAccending(){
+    data.sort((a,b)=>{
+        if(a.region > b.region){
+            return -1;
+        }
+        else if(a.region < b.region){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    });
+    displayData(data);
+}
+
+//event listener to sort button of continent
+sortContinentAccending.addEventListener('click',()=>{
+    mainContent.innerHTML= "";
+    sortContinentByAccending();
+});
+
 //Sort by population
 
 function sortByPopulation(){
@@ -119,6 +192,16 @@ sortPopulation.addEventListener('click',()=>{
     mainContent.innerHTML= "";
     sortByPopulation();
 });
+//sort population in accending order
+function sortPopulationByAccending(){
+    data.sort((a,b)=>b.population-a.population);
+    displayData(data);
+    }
+    //event listener to sort button of population
+    sortPopulationAccending.addEventListener('click',()=>{
+        mainContent.innerHTML= "";
+        sortPopulationByAccending();
+    });
 
 //function to search with button click
 function SearchByKeyEnter(){

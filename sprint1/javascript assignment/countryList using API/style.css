@@ -1,9 +1,10 @@
 .mainContent div{
     flex:1;
     justify-content: center;
-    line-height: 20vh;
     height: auto;
     text-align: center;
+    font-size: 4vh;
+    align-self: center;
 }
 .countryHeading div{
     flex:1;
@@ -11,6 +12,7 @@
     line-height: 20vh;
     height: 20vh;
     text-align: center;
+    font-size: 3vh;
 }
 
 img{
@@ -78,14 +80,13 @@ input[type = button]{
     padding: 0 20px 5px 10px;
     
 }
-mainContent:first-child{
-     background: #FF0;
-    }
-mainContent:nth-child(2n+3){
-    background: #CCC;
-}
 
 #sortArrow{
     font-weight: 50vh;
     font-size: 5vh;
+}
+a:hover{
+    color: white;
+    background-color: blue;
+    border: 3px solid white;
 }
