@@ -10,7 +10,11 @@ let sortPopulationAccending = document.querySelector("#sortUpPopulation");
 let inputValue = document.querySelector(".inputValue");
 
 
+//array for number of population
+let totalPopulation = [];
+console.log(totalPopulation);
 
+let total = 0;
 
 //display the countries in the index page
 function fetchApi(){
@@ -20,8 +24,6 @@ function fetchApi(){
         return res.json();  
     })
     .then(data => {
-        console.log(data);
-        
         sendCountries(data);
         displayData(data);
     });
@@ -205,16 +207,39 @@ function sortPopulationByAccending(){
 
 //function to search with button click
 function SearchByKeyEnter(){
+  
   let results = data.filter(element=>element.name.toLowerCase().startsWith(inputValue.value));
-  displayData(results);
+  let results1 = data.filter(element=>element.capital.toLowerCase().startsWith(inputValue.value));
+  let results2 = data.filter(element=>element.region.toLowerCase().startsWith(inputValue.value));
+  if(results||results1||results2){
+    displayData(results);
+    displayData(results1);
+    displayData(results2);
+  }
+  
 }
 //event listener for keyUp search function
 inputValue.addEventListener("keyup",()=>{
     mainContent.innerHTML="";
     SearchByKeyEnter();
 })
+
+//getting the value of population in the world
+let total = 0;
+data.forEach(element=>{
+    totalPopulation.push({name:element.name ,population:element.population});
+    total += element.population
+    });
+    console.log(total)
+
+function totalPop(){
+
 };
   
+
+};
+
+
    
 
 

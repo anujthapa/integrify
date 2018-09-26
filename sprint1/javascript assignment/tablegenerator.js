@@ -1,3 +1,4 @@
+
 let wrapper = document.querySelector('.wrapper')
 let heading =  document.createElement('div');
 let headText = document.createElement('div');
@@ -6,10 +7,10 @@ let headText = document.createElement('div');
 heading.style.backgroundColor= 'green';
 heading.style.width = '100vw';
 heading.style.height = 'auto';
-heading.style.padding = '20px',
+heading.style.padding = '20px 0',
 heading.style.display = 'flex';
 heading.style.flexWrap='wrap';
-
+heading.className="heading";
 //headtext 
 
 headText.textContent='HTML TABLE GENERATOR';
@@ -237,27 +238,29 @@ let tblFontAlign=document.querySelector('.textAlign').value;
 
 
 table.style.width = tblwidthPer + "%";
-table.style.backgroundColor= tblBdBgColor;
+table.style.backgroundColor= tblBgColor;
 table.style.borderWidth =bodrWidth;
 table.style.borderColor = tblBodrColor;
 table.style.color = tblFontColor;
 table.style.textAlign = tblFontAlign;
 table.style.fontWeight = tblFontSize + "px";
 table.style.fontFamily = tblFontStyle;
+wrapper.style.backgroundColor = tblBdBgColor;
 
 for(let i = 1; i<=tblcolumn; i++){
     var tableHeading = document.createElement('th');
     tableHeading.textContent=`Head ${i}`;
     tableHeading.style.backgroundColor=tblHdBgColor;
+    tableHeading.style.border =`${bodrWidth} solid ${tblBodrColor}`
     table.appendChild(tableHeading);
 }
  for(let i=1;i<=tblRow;i++){
         var tr = document.createElement('tr');
         tr.style.borderWidth =bodrWidth;
-        tr.style.backgroundColor = tblBgColor;
     for(let i = 1; i<=tblcolumn; i++){
             var td= document.createElement('td');
             td.textContent='value';
+            td.style.border =`${bodrWidth} solid ${tblBodrColor}`
             td.style.borderWidth =bodrWidth;
             tr.appendChild(td);          
     }
