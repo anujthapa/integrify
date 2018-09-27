@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Account information</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="headerText">
+               <h1>ACCOUNT BALANCE</h1> 
+            </div>
+            <div class="headerinputInfo">
+                <input type="text" id="discription" placeholder="Description">
+                <input type="number" id="Amount" placeholder="Amount">
+                <select name="Select the type" id="selectOption">
+                        <option value="Income">Income</option>
+                        <option value="Expenses">Expenses</option>
+                  </select>
+                <input type="button" id="addBtn" value="ADD">
+             </div>
+        </div>
+        
+        <div class="accountDisplay">
+        
+            <div class="accountIncome">
+                <div id="incomeHeadind"></div>
+                <div class="incomeAmount"></div>
+                <div class="date"></div>
+                <div class="time"></div>
+            </div>
+            
+            <div class="accountExpenses">
+                   <div id="expensesHeadind"></div>
+                    <div class="expensesAmount"></div>
+                    <div class="date"></div>
+                    <div class="time"></div>
+            </div>
+        </div>
+    </div>
+ <script src="main.js"></script>   
+</body>
+</html>

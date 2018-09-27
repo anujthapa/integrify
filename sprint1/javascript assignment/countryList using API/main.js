@@ -162,7 +162,7 @@ sortContinent.addEventListener('click',()=>{
 
 //sort by continent Name
 
-function sortContinentByAccending(){
+function reUsedFunction(region) {
     data.sort((a,b)=>{
         if(a.region > b.region){
             return -1;
@@ -174,6 +174,9 @@ function sortContinentByAccending(){
             return 0;
         }
     });
+}
+function sortContinentByAccending(){
+    
     displayData(data);
 }
 
@@ -208,14 +211,9 @@ function sortPopulationByAccending(){
 //function to search with button click
 function SearchByKeyEnter(){
   
-  let results = data.filter(element=>element.name.toLowerCase().startsWith(inputValue.value));
-  let results1 = data.filter(element=>element.capital.toLowerCase().startsWith(inputValue.value));
-  let results2 = data.filter(element=>element.region.toLowerCase().startsWith(inputValue.value));
-  if(results||results1||results2){
+  let results = data.filter(element=>element.name.toLowerCase().startsWith(inputValue.value) || element.capital.toLowerCase().startsWith(inputValue.value) || element.region.toLowerCase().startsWith(inputValue.value));
+
     displayData(results);
-    displayData(results1);
-    displayData(results2);
-  }
   
 }
 //event listener for keyUp search function
@@ -227,7 +225,6 @@ inputValue.addEventListener("keyup",()=>{
 //getting the value of population in the world
 let total = 0;
 data.forEach(element=>{
-    totalPopulation.push({name:element.name ,population:element.population});
     total += element.population
     });
     console.log(total)
