@@ -14,31 +14,26 @@
                <h1>ACCOUNT BALANCE</h1> 
             </div>
             <div class="headerinputInfo">
-                <input type="text" id="discription" placeholder="Description">
-                <input type="number" id="Amount" placeholder="Amount">
-                <select name="Select the type" id="selectOption">
+                <input type="text" id="discription" placeholder="Description" required>
+                <input type="number" id="Amount" placeholder="Amount" required>
+                <select name="Select the type" id="selectOption" required>
                         <option value="Income">Income</option>
                         <option value="Expenses">Expenses</option>
                   </select>
                 <input type="button" id="addBtn" value="ADD">
+                <input type="button" id="showDetailsBtn" value="Show Details">
              </div>
         </div>
         
         <div class="accountDisplay">
-        
-            <div class="accountIncome">
-                <div id="incomeHeadind"></div>
-                <div class="incomeAmount"></div>
-                <div class="date"></div>
-                <div class="time"></div>
+            <div class="incomeDiv">
+
+             </div>
+            <div class="expensesDiv">
+
             </div>
             
-            <div class="accountExpenses">
-                   <div id="expensesHeadind"></div>
-                    <div class="expensesAmount"></div>
-                    <div class="date"></div>
-                    <div class="time"></div>
-            </div>
+         </div>
         </div>
     </div>
  <script src="main.js"></script>   
