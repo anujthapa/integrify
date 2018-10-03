@@ -46,39 +46,29 @@ function validationForm(){
 }
 
 
-//to save data of array in local storage
-/* function saveLocal(){
-    localStorage.setItem('accountBalance',JSON.stringify(account));
-}
-saveLocal() */
-
 //to get data from local storage
 function getLocalData(){
-    return  accountStatement = JSON.parse(localStorage.getItem('accountBalance'),undefined,4);
-}
-
-/* //check the length of local storage
-let localstorageLength = getLocalData();
-console.log(localstorageLength.length);
-console.log(account.length);
-function compareLength(){
-    if(localstorageLength.length>account.length){
-        saveLocal();
-        console.log("This is function");
-        
-    }
-} */
-
-
-
+    const accountStatement = localStorage.getItem("accountBalance")
+    return JSON.parse(accountStatement)
+} 
 //Function to show data when the page is browsed
 displayDataIncomeStatement(getLocalData());
  displayDataExpensesStatement(getLocalData());
  barGrap(getLocalData());
 
+
+
 //function to save userinput data from form in array
+
 function collectData(){
-    let data=/*  arr.push */({Description:description.value, Amount:parseInt(amount.value), Heading:selectOption.value, Date:(todayDate())});
+    let data;
+    if(getLocalData() === null){
+        data = [];
+    }
+    else{
+        data= getLocalData();
+    }
+    data.push({Description:description.value, Amount:parseInt(amount.value), Heading:selectOption.value, Date:(todayDate())});
     let dataJSON = JSON.stringify(data, undefined, 4);
     localStorage.setItem("accountBalance", dataJSON);
 }
@@ -95,8 +85,6 @@ function todayDate(){
     let y =  `${today}/${month}/${year}/${hour}/${min}/${second}`
     return y;
 }
-console.log(todayDate());
-
 
 //function to filter and print heading with income
 function displayDataIncomeStatement(arr){
@@ -156,7 +144,7 @@ function barGrap(arr){
    
 }
 
-//program to take data from user
+
 
 
 
