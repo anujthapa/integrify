@@ -1,33 +1,40 @@
-div{
-    border: 2px solid black;
+
+body{
+    background: black;
+    color: white;
 }
-
-
 .wrapper{
-    width: 100vw;
+    width: 80vw;
     height: 100vh;
+    margin-left: 10vw;
+    background: orange;
+    opacity: 0.7;
+    
     
 }
 .header{
-    width: 100vw;
-    height: 40vh;
+    width: 80vw;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
+    background: blue;
 }
 .headerText{
-    width: 100vw;
+    width: 80vw;
     height: 10vh;
     text-align: center;
+    font-weight: bolder;
+    font-size: 200%;
 }
 .headerinputInfo{
-    width: 100vw;
+    width: 80vw;
     height: 20vh;
 }
 input,select{
-    width: 15%;
-    height: 20%;
+    width: auto;
+    height: auto;
     border: 3px solid gray;
-    display: inline;
+    font-size: 3vh;
     margin:5vh 3vw;
     text-align: center;
 }
@@ -35,19 +42,24 @@ input,select{
     background-color: #4CAF50;
     border-radius: 10%;
     text-align: center;
-    display: inline;
-    font-size: 16px;
+    font-size: 3vh;
     width: 9%;
 
 }
+.divContent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+}
 .accountDisplay{
-    width: 100vw;
-    height: 60vh;
+    width: 45vw;
+    height: auto;
     display: flex;
     flex-wrap: wrap; 
-    justify-content: space-around
+    justify-content: space-around;
+    margin: 1vh 1vh;
 }
-.accountIncome{
+/* .accountIncome{
     width: 45vw;
     display:flex;
     flex-wrap: wrap;
@@ -56,31 +68,84 @@ input,select{
         width: 45vw;
         display:flex;
         flex-wrap: wrap;
-}
+} */
 
 .income{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 30vw;
+    height: 2vh;
 }
 .income div{
 flex:1;
+height: 1vh;
+margin-left: 2%;
 }
+
 .expenses{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 30vw;
+    height: 2vh;
 }
 .expenses div{
-    flex :1
+    flex :1;
+    height: auto;
+    margin-left: 2%;
+    
 }
 .incomeDiv{
-    width: 45vw;
+    width: 20vw;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
 }
 .expensesDiv{
-    width: 45vw;
+    width: 20vw;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
 }
+.statDiv{
+    width: 30vw;
+    height: auto;
+    border: 1px orange solid;
+    display :flex;
+    flex-wrap: wrap;
+}
+/* .barGraph{
+    width: 20px;
+    background-color: red;
+    margin: 2px;
+    position: relative;
+    display: inline-block;
+
+} */
+.barGraph{
+    position: relative;
+    display: inline-block;
+    background-color:red;
+    width: 20px;
+    bottom:-2vh;
+    text-align: center;
+    margin-right: 3px;
+    line-height: 40px;
+}
+
+.barGraph:hover{
+    background-color: white;
+    width: 30px;
+}
+#statementHeading{
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+}
+#statementHeading div{
+    flex:1;
+    background-color: gray;
+    height: 2vh;
+    border-right: 1px white solid;
+    padding: 0 0 2% 2%;
+}
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Day 3</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .chart-wrapper {
+            width:90%;
+            margin: auto;
+            background: lightgoldenrodyellow;
+           
+        }
+        .buttons{
+            margin: auto;
+            text-align:center;
+            margin-bottom: 5px;
+        }
+        button {
+            height:35px;
+            background:lightgoldenrodyellow;
+            outline:none;
+            border:none;
+
+
+        }
+        button:focus {
+            border:2px solid rgba(5,45,58,0.5);
+        } 
+        .bar-graph {
+            border: 1px solid orange;
+            height: 40px;
+            text-align: right;
+            margin-bottom :3px;
+            padding-right:20px;
+            line-height:40px;
+
+        }
+        .histograph {
+            position:relative;
+            display: inline-block;
+            border :1px solid orange;;
+            width:40px;
+            margin-bottom :3px;
+            text-align:center;
+            padding-right:20px;
+            line-height:40px
+
+        }
+        .bar {
+            color: white;
+            font-size: 18px;
+        }
+
+    
+
+  </style>
+</head>
+<body>
+    <div class="buttons">
+            <button id="add-bar-graph">Bar Graph</button>
+            <button id="add-histograph">Histograph</button>
+
+    </div>
+    
+
+    <div class="chart-wrapper"></div>
+    
+        
+    <script>
+        const data = [123,180,250,330,380,420, 460,500];
+        const chartWrapper = document.querySelector('.chart-wrapper');
+        const addBarGraph = document.querySelector('#add-bar-graph');
+        const addHistograph = document.querySelector('#add-histograph');
+      
+
+        const createBarGraph = () => {
+            data.forEach((num) => {
+            let div = document.createElement('div');
+            div.className = 'bar';
+            div.classList.add('bar','bar-graph')
+            div.textContent = num;
+            div.style.background = `rgba(5,45,58,${num/500})`
+            div.style.width = (num/500)* 100 + '%';
+            chartWrapper.appendChild(div);
+        })
+
+        };
+        // createBarGraph()
+
+    const createHistograph = () => {
+        data.forEach((num) => {
+            let div = document.createElement('div');
+            div.textContent = num;
+            div.classList.add('bar','histograph')
+            div.style.height = num + 'px';
+            div.style.top= 500 - num  + 'px'
+            div.style.background = `rgba(5,45,58,${num/500})`
+            chartWrapper.appendChild(div);
+        })
+
+    };
+
+    const removeDivs = () => {
+        let bars = document.querySelectorAll('.bar');
+        bars.forEach((bar)=>{
+            chartWrapper.removeChild(bar)
+        });
+    }
+
+    addBarGraph.addEventListener('click',() => {
+        chartWrapper.innerHTML = '';
+        // removeDivs();
+        createBarGraph();
+    });
+
+    addHistograph.addEventListener('click',() => {
+        chartWrapper.innerHTML = '';
+        // removeDivs();
+        createHistograph()
+    })
+createBarGraph();
+</script>
+</body>
+</html>
