@@ -1,0 +1,67 @@
+body{
+    widows: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: gray;
+}
+.header{
+    background-color: red;
+    height: 20vh;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    
+}
+.headname{
+    color: white;
+    font-size: 5vh;
+    margin-top: 5vh;
+}
+
+.mainImage{
+    height:auto;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+.img img{
+    height:50vh;
+    width: 80vw;
+}
+
+.menuList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: red;
+    color: white; 
+}
+
+.menuList input{
+    background-color: red;
+    color: white; 
+    width: 10vw;
+    height: 5vh;
+    opacity: 0.7;
+ 
+    
+} 
+.featuredPhoto{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:silver;
+    font-size: 3vh;
+}
+.menu{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
