@@ -1,0 +1,26 @@
+.offersecond{
+    background-color:#29809F;
+    height: 50vh;
+    width: 100vw;
+    padding-top:10vh;
+    text-align: center;
+}
+.offersecond p{
+    color:#ecb807;
+    font-size: 1.75rem;
+}
+.offersecond h1{
+    color: #ffff;
+    font-size: 3rem;
+}
+.circleDiv{
+    text-align: center;
+    margin-left: 15rem;
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+.circleDiv p {
+   font-size: 1rem;
+} 

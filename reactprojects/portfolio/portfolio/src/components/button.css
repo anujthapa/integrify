@@ -1,0 +1,11 @@
+ .btn{
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,1);
+    font-weight: 700;
+    background-color: #343A40;
+    border-color: #1d809f;
+    color: #fff;
+    text-decoration: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
