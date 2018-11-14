@@ -1,0 +1,27 @@
+.hero{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#courses{
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#course{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: skyblue;
+    border: 2px solid blue;
+    padding: 10px;
+}
+button{
+    width: 2rem;
+    padding: 5px;
+    margin-left: 10px;
+    color: purple;
+    font-weight: bolder;
+}

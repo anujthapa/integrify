@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -34,21 +33,17 @@ App.defaultProps = {
 
 }
 
-
-
-
 class Parent extends Component {
-  constructor(props){
-    super(props);
-
+  constructor(props) {
+    super(props)
+    
     this.state = {
       cars: ['s-BMW', 's-MERC', 's-City', 's-Audi']
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
-  handleClick(){
-    this.setState( {cars: this.state.cars.reverse()});
+  handleClick=()=>{
+  this.setState({cars: this.state.cars.reverse()})
   }
 
   render(){
@@ -67,6 +62,7 @@ Parent.defaultProps = {
 }
 
 class Cars extends Component {
+ 
   render(){
     console.log(this.props);
     return(
@@ -74,9 +70,8 @@ class Cars extends Component {
         <h3> I am from cars component</h3>
         <p>{this.props.msg}</p>
         <p>{this.props.model}</p>
-        <div>{this.props.coolCars.map((item, i) => {
-            return <p key={i}>{item}</p> ;
-          })}</div>
+        <div>{this.props.coolCars.map((item,i)=><p key={i}>{item}</p>)}</div>
+        
       </div>
     );
   }
