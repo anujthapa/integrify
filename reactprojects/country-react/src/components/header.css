@@ -1,0 +1,26 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    margin: auto;
+    background-color: aqua;
+    padding: 10px;
+}
+h1,h2{
+    width:100%;
+    line-height: 5%;
+}
+
+span{
+    margin:10px;
+    background-color: aquamarine;
+}
+
+input{
+    width:90%;
+    height: 3vh;
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}

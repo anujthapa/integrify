@@ -1,0 +1,53 @@
+input,select,textarea{
+    width: 70vw;
+    height: 2rem;
+    font-size:1.5rem;
+    padding: 10px;
+    margin-top: 10px;
+}
+.form{
+    background-color: black;
+    opacity: .8;
+    width:80vw;
+    margin:auto;
+    padding: 2rem;
+    border:1px white solid;
+}
+label{
+    color:white;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+input[type="radio"]{
+    width:1vw;
+    color:red;
+}
+
+button{
+    padding : 0rem 2rem;
+    color: black;
+    font-size: 2rem;
+    background-color: green;
+    border: 2px blue solid;
+    border-radius: 20%;
+  }
+  h1{
+      color: white;
+      font-weight: bolder;
+      padding: 20px;
+
+  }
+
+  textarea{
+      height: 7rem;
+      margin-bottom: 3vh;
+  }
+
+  p{
+      color:red;
+  }
+
+  .totalUser p{
+      color:green;
+  }
